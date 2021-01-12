@@ -33,11 +33,18 @@ while winner.nil? or draw
 
   puts "Current player: #{current_player.name}"
 
-  gets.chomp
+  board.print_board
 
-  puts board.print_board
+  puts "#{current_player.name} pick one box!"
+  input = gets.chomp
+  if board.check_input(input)
+    # Change box
+    turn = !turn
+  else
+    puts "Sorry, you can't cheat in this game. The turn will restart."
+  end
 
-  turn = !turn
+  # Check for Winner or Draw ? BREAK THE LOOP : KEEP LOOPING
 
 end
 

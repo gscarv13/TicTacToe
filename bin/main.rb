@@ -33,7 +33,6 @@ gets.chomp
 puts ' Player-O'
 puts ' --------------------------------------------------------------- '
 
-
 puts "Let's begin!"
 # Start the game loop
 board = Board.new

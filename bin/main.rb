@@ -2,20 +2,24 @@
 
 require_relative '../lib/game_logic'
 
-# Printing
+# Instantiate the Player class
+player1 = Player.new('X')
+player2 = Player.new('O')
 
 # Welcome
 puts ' --------------------------------------------------------------- '
 puts ' ==============  Welcome to the TicTacToe !  =================== '
 puts " Who's going to be the X ? (Please insert a nickname)"
-gets.chomp
-puts ' Player-X'
+player1.name = gets.chomp
+puts " Player #{player1.name} is the X"
 puts " Who's going to be the O ? (Please insert a nickname)"
-gets.chomp
-puts ' Player-O'
+player2.name = gets.chomp
+puts " Player #{player2.name} is the O"
 puts ' --------------------------------------------------------------- '
 
 puts "Let's begin!"
+system 'clear'
+
 # Start the game loop
 board = Board.new
 

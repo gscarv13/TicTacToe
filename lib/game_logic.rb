@@ -1,5 +1,15 @@
 # Classes
 
+class Player
+  attr_reader :name
+  attr_writer :name
+
+  def initialize(tag)
+    @name = ''
+    @tag = tag
+  end
+end
+
 class Board
   def print_board
     puts "[ #{Square.new('1')} ] [ #{Square.new('2')} ] [ #{Square.new('3')} ]"

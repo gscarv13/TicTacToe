@@ -37,17 +37,31 @@ puts "Let's begin!"
 # Start the game loop
 board = Board.new
 
-puts board.print_board
+winner = nil
+draw = false
+# turn = true
 
-puts ' Player X <input nick> pick your move '
-gets.chomp
+while winner.nil? or draw
 
-puts board.print_board
+  # current_player = turn ? player1 : player 2
 
-puts ' Player O <input nick> pick your move '
-gets.chomp
+  puts board.print_board
 
-puts board.print_board
+  puts 'turn decides which player plays this time'
+
+  puts ' Player <input nick> pick your move '
+  puts "INVALID MOVE if #{gets.chomp} is > 0 or < 9 or invalid character or if he tries to change a used square"
+
+  puts 'Here we check if there is a winner. type w to stop the loop'
+  puts 'draw = true if no valid moves left'
+
+  winner = true if gets.chomp == 'w'
+
+  puts board.print_board
+
+  # turn = !turn
+
+end
 
 # Results!
 puts ' ====================  The result is...  ======================== '

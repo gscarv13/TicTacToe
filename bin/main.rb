@@ -22,6 +22,7 @@ end
 
 # Printing
 
+# Welcome
 puts ' --------------------------------------------------------------- '
 puts ' ==============  Welcome to the TicTacToe !  =================== '
 puts " Who's going to be the X ? (Please insert a nickname)"
@@ -32,8 +33,9 @@ gets.chomp
 puts ' Player-O'
 puts ' --------------------------------------------------------------- '
 
-puts "Let's begin!"
 
+puts "Let's begin!"
+# Start the game loop
 board = Board.new
 
 puts board.print_board
@@ -47,3 +49,11 @@ puts ' Player O <input nick> pick your move '
 gets.chomp
 
 puts board.print_board
+
+# Results!
+puts ' ====================  The result is...  ======================== '
+puts board.print_board
+
+puts 'Congratulations! Player <input nick> is the Winner!'
+puts 'Play again?'
+gets.chomp

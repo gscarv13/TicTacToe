@@ -25,27 +25,19 @@ board = Board.new
 
 winner = nil
 draw = false
-# turn = true
+turn = true
 
 while winner.nil? or draw
 
-  # current_player = turn ? player1 : player 2
+  current_player = turn ? player1 : player2
+
+  puts "Current player: #{current_player.name}"
+
+  gets.chomp
 
   puts board.print_board
 
-  puts 'turn decides which player plays this time'
-
-  puts ' Player <input nick> pick your move '
-  puts "INVALID MOVE if #{gets.chomp} is > 0 or < 9 or invalid character or if he tries to change a used square"
-
-  puts 'Here we check if there is a winner. type w to stop the loop'
-  puts 'draw = true if no valid moves left'
-
-  winner = true if gets.chomp == 'w'
-
-  puts board.print_board
-
-  # turn = !turn
+  turn = !turn
 
 end
 

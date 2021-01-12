@@ -37,3 +37,8 @@ puts "Let's begin!"
 board = Board.new
 
 puts board.print_board
+
+puts ' Player X <input nick> pick your move '
+gets.chomp
+
+puts board.print_board

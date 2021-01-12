@@ -42,3 +42,8 @@ puts ' Player X <input nick> pick your move '
 gets.chomp
 
 puts board.print_board
+
+puts ' Player O <input nick> pick your move '
+gets.chomp
+
+puts board.print_board

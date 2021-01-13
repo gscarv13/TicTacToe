@@ -45,25 +45,22 @@ class Board
   end
 
   def check_winner(player)
-    # Rows
-    return player if [@board_grid[0].char, @board_grid[1].char, @board_grid[2].char].all?(player.tag)
-    return player if [@board_grid[3].char, @board_grid[4].char, @board_grid[5].char].all?(player.tag)
-    return player if [@board_grid[6].char, @board_grid[7].char, @board_grid[8].char].all?(player.tag)
+    win_conditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
 
-    # Columns
-    return player if [@board_grid[0].char, @board_grid[3].char, @board_grid[6].char].all?(player.tag)
-    return player if [@board_grid[1].char, @board_grid[4].char, @board_grid[7].char].all?(player.tag)
-    return player if [@board_grid[2].char, @board_grid[5].char, @board_grid[8].char].all?(player.tag)
+    winner = nil
+    win_conditions.map { |boxes| winner = player if create_win_condition(boxes, player.tag) }
 
-    # Diagonals
-    return player if [@board_grid[0].char, @board_grid[4].char, @board_grid[8].char].all?(player.tag)
-    return player if [@board_grid[2].char, @board_grid[4].char, @board_grid[6].char].all?(player.tag)
-
-    nil
+    winner
   end
 
   def check_draw(winner)
     return true if @board_grid.all? { |item| item.char == 'X' or item.char == 'O' } and winner.nil?
+  end
+
+  private
+
+  def create_win_condition(boxes, tag)
+    return true if [@board_grid[boxes[0]].char, @board_grid[boxes[1]].char, @board_grid[boxes[2]].char].all?(tag)
   end
 end
 

@@ -1,4 +1,4 @@
-# Enumerable methods
+# TicTacToe Game
 This is a WIP for the TicTacToe OOP Project. This version is for the first milestone
 
 <!-- ![screenshot](./screenshot.png) -->

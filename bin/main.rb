@@ -5,6 +5,9 @@ require_relative '../lib/game_logic'
 # Instantiate the Player class
 player1 = Player.new('X')
 player2 = Player.new('O')
+again = true
+
+while again
 
 # Welcome
 puts ' --------------------------------------------------------------- '
@@ -54,8 +57,10 @@ if winner
   puts board.print_board
 
   puts "Congratulations! Player #{winner.name} is the Winner!"
-  puts 'Play again?'
-  gets.chomp
 end
 
 puts 'DRAW' if winner.nil?
+
+puts "Play again? Type 'n' to exit"
+break if gets.chomp.include?('n')
+end

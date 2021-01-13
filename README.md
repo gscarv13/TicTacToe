@@ -2,9 +2,9 @@
 This Project is a TicTacToe game written in ruby, which can be played by two players, one being the `X` and the other being the `O`. 
 The main goal is to fill a3x3 grid with those symbols, in which the winner is who can create a line with the same characters or we have a draw
 
-[screenshot](.pic/1.png)
-[screenshot](.pic/3.png)
-[screenshot](.pic/4.png)
+![screenshot](./pics/1.png)
+![screenshot](./pics/3.png)
+![screenshot](./pics/4.png)
  
 ## Built With
 

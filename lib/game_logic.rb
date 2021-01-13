@@ -26,9 +26,18 @@ class Board
   end
 
   def check_input(input)
-    return false unless input.to_i.is_a? Numeric
+    return false if input.to_i.zero?
+    return false unless input.to_i.positive? && input.to_i < 10
 
-    input.to_i.positive? && input.to_i < 10 && @board_grid[input.to_i] != ('X' || 'O') ? true : false
+    check_board(input)
+  end
+
+  def check_board(input)
+    if @board_grid[input.to_i - 1].to_s == 'X' || @board_grid[input.to_i - 1].to_s == 'O'
+      false
+    else
+      true
+    end
   end
 
   def change_box(input, player)

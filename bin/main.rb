@@ -17,17 +17,17 @@ player2.name = gets.chomp
 puts " Player #{player2.name} is the O"
 puts ' --------------------------------------------------------------- '
 
-puts "Let's begin!"
 system 'clear'
+
+puts "Let's begin!"
 
 # Start the game loop
 board = Board.new
-
 winner = nil
-draw = false
 turn = true
 
-while winner.nil? or !draw
+while winner.nil?
+  break if board.check_draw(winner)
 
   current_player = turn ? player1 : player2
 
@@ -44,14 +44,18 @@ while winner.nil? or !draw
     puts "Sorry, you can't cheat in this game. The turn will restart."
   end
 
-  # Check for Winner or Draw ? BREAK THE LOOP : KEEP LOOPING
-
+  winner = board.check_winner(current_player)
 end
 
 # Results!
-puts ' ====================  The result is...  ======================== '
-puts board.print_board
 
-puts 'Congratulations! Player <input nick> is the Winner!'
-puts 'Play again?'
-gets.chomp
+if winner
+  puts ' ====================  The result is...  ======================== '
+  puts board.print_board
+
+  puts "Congratulations! Player #{winner.name} is the Winner!"
+  puts 'Play again?'
+  gets.chomp
+end
+
+puts 'DRAW' if winner.nil?

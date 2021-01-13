@@ -43,9 +43,33 @@ class Board
   def change_box(input, player)
     @board_grid[input.to_i - 1] = Square.new(player.tag)
   end
+
+  def check_winner(player)
+    # Rows
+    return player if [@board_grid[0].char, @board_grid[1].char, @board_grid[2].char].all?(player.tag)
+    return player if [@board_grid[3].char, @board_grid[4].char, @board_grid[5].char].all?(player.tag)
+    return player if [@board_grid[6].char, @board_grid[7].char, @board_grid[8].char].all?(player.tag)
+
+    # Columns
+    return player if [@board_grid[0].char, @board_grid[3].char, @board_grid[6].char].all?(player.tag)
+    return player if [@board_grid[1].char, @board_grid[4].char, @board_grid[7].char].all?(player.tag)
+    return player if [@board_grid[2].char, @board_grid[5].char, @board_grid[8].char].all?(player.tag)
+
+    # Diagonals
+    return player if [@board_grid[0].char, @board_grid[4].char, @board_grid[8].char].all?(player.tag)
+    return player if [@board_grid[2].char, @board_grid[4].char, @board_grid[6].char].all?(player.tag)
+
+    nil
+  end
+
+  def check_draw(winner)
+    return true if @board_grid.all? { |item| item.char == 'X' or item.char == 'O' } and winner.nil?
+  end
 end
 
 class Square
+  attr_reader :char
+
   def initialize(char = nil)
     @char = char
   end

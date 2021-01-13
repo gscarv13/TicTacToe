@@ -1,8 +1,8 @@
 # Classes
 
 class Player
-  attr_reader :name
-  attr_writer :name
+  attr_accessor :name
+  attr_reader :tag
 
   def initialize(tag)
     @name = ''
@@ -29,6 +29,10 @@ class Board
     return false unless input.to_i.is_a? Numeric
 
     input.to_i.positive? && input.to_i < 10 && @board_grid[input.to_i] != ('X' || 'O') ? true : false
+  end
+
+  def change_box(input, player)
+    @board_grid[input.to_i - 1] = Square.new(player.tag)
   end
 end
 

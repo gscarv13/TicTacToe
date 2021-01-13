@@ -27,7 +27,7 @@ winner = nil
 draw = false
 turn = true
 
-while winner.nil? or draw
+while winner.nil? or !draw
 
   current_player = turn ? player1 : player2
 
@@ -38,7 +38,7 @@ while winner.nil? or draw
   puts "#{current_player.name} pick one box!"
   input = gets.chomp
   if board.check_input(input)
-    # Change box
+    board.change_box(input, current_player)
     turn = !turn
   else
     puts "Sorry, you can't cheat in this game. The turn will restart."

@@ -13,13 +13,20 @@ while again
   puts ' --------------------------------------------------------------- '
   puts ' ==============  Welcome to the TicTacToe !  =================== '
   puts " Who's going to be the X ? (Please insert a nickname)"
+  puts
   player1.name = gets.chomp
-  puts " Player #{player1.name} is the X"
+  puts
+  puts " ---> Player #{player1.name} is the X"
+  puts
   puts " Who's going to be the O ? (Please insert a nickname)"
+  puts
   player2.name = gets.chomp
-  puts " Player #{player2.name} is the O"
+  puts
+  puts " ---> Player #{player2.name} is the O"
   puts ' --------------------------------------------------------------- '
-
+  puts
+  puts 'Press Enter to start!'
+  gets
   system 'clear'
 
   puts "Let's begin!"

@@ -1,18 +1,46 @@
-# TicTacToe Game
-This is a WIP for the TicTacToe OOP Project. This version is for the first milestone
+# TicTacToe
+This Project is a TicTacToe game written in ruby, which can be played by two players, one being the `X` and the other being the `O`. 
+The main goal is to fill a3x3 grid with those symbols, in which the winner is who can create a line with the same characters or we have a draw
 
-<!-- ![screenshot](./screenshot.png) -->
+![screenshot](./pics/1.png)
+![screenshot](./pics/4.png)
  
 ## Built With
 
 - RUBY
 
+## Live Demo
+
+[![Run on Repl.it](https://repl.it/badge/github/acushlakoncept/TicTacToe)](https://repl.it/@gscarv13/TicTacToe#bin/main.rb)
+
+To play the game, you need to visit the link above 
+ - Select the `Shell` tab  on the top right of the repl.it page
+ - Enter `ruby bin/main.rb` in the Shell tab and hit `Enter`
+
 ## Usage
 
-TO DO
+Running this game locally will require the ruby language installed on your machine.
+To play this game on the browser please visit the Live Demo section
+
+- Donwload the game by cloning this repository `git clone https://github.com/RokoVarano/TicTacToe.git`
+- Move to the directory where the file was downloaded
+- Execute `bin/main.rb` on the terminal to start the game
+
+## Game Instructions
+
+- After executing the game, The player is prompted by a welcome messege and asked to enter a nickname for `Player1`. Press `Enter` to complete
+- Give a nickname for `Player2`and press `Enter` to complete
+- The game starts with `Player1`, and it should pick a number between 1 ~ 9 which represents the postition of the where the `X` will be placed
+- The next turn `Player2` should pick one of the avaliable positions, represented by the numbers on the board
+- The player is neither allowed to overwrite a previously selected location nor entering inputs different of the numbers between 1 and 9
+
+- The player who completes one row with the same symbol wins and the game ends.
+- If no one completes a row and no movements are left, it is a draw and the game ends.
+
+- Once the game ends, the players can type `n` to end the game or hit `Enter` to restart.
 
 ## Authors
-s
+
 👤 **Gustavo Carvalho**
 
 - GitHub: [@gscarv13](https://github.com/gscarv13)

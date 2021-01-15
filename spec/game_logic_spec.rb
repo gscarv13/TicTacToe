@@ -2,36 +2,36 @@
 require_relative '../lib/game_logic'
 
 # Intantiate classes
-player1 = Player.new('X')
-player2 = Player.new('O')
-
-clear_board = Board.new
-
-win1 = Board.new
-
-win1.change_box('1', player1)
-win1.change_box('4', player1)
-win1.change_box('7', player1)
-
-win2 = Board.new
-win2.change_box('1', player2)
-win2.change_box('4', player2)
-win2.change_box('7', player2)
-
-draw = Board.new
-draw.change_box('1', player1)
-draw.change_box('2', player1)
-draw.change_box('3', player2)
-draw.change_box('4', player2)
-draw.change_box('5', player2)
-draw.change_box('6', player1)
-draw.change_box('7', player1)
-draw.change_box('8', player2)
-draw.change_box('9', player1)
 
 describe Board do
+  let(:board) { Board.new }
+  let(:clear_board) { Board.new }
+
+  player1 = Player.new('X')
+  player2 = Player.new('O')
+
+  win1 = Board.new
+  win1.change_box('1', player1)
+  win1.change_box('4', player1)
+  win1.change_box('7', player1)
+
+  win2 = Board.new
+  win2.change_box('1', player2)
+  win2.change_box('4', player2)
+  win2.change_box('7', player2)
+
+  draw = Board.new
+  draw.change_box('1', player1)
+  draw.change_box('2', player1)
+  draw.change_box('3', player2)
+  draw.change_box('4', player2)
+  draw.change_box('5', player2)
+  draw.change_box('6', player1)
+  draw.change_box('7', player1)
+  draw.change_box('8', player2)
+  draw.change_box('9', player1)
+
   describe '#check_input' do
-    let(:board) { Board.new }
     it 'returns false if input == 0' do
       expect(board.check_input(0)).to be false
     end

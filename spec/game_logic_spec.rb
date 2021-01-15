@@ -2,7 +2,7 @@
 require_relative '../lib/game_logic'
 
 describe Board do
-
+    
     describe '#check_input' do
 
         it "returns false if input == 0" do
@@ -17,9 +17,14 @@ describe Board do
             expect(board.check_input(5)).to be true
         end
 
+    end
+
+    describe '#check_board' do
+
         it "returns false unless input.positive? && input < 10" do
             board = Board.new
-            expect(board.check_board('X')).to be true
+            board = Square.new('1', player1)
+            expect(board.check_board(@board_grid[0])).to be false
         end
 
     end

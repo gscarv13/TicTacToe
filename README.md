@@ -26,6 +26,14 @@ To play this game on the browser please visit the Live Demo section
 - Move to the directory where the file was downloaded
 - Execute `bin/main.rb` on the terminal to start the game
 
+## Testing Instructions
+
+In order to run testing cases it's necesary to download rspec which can be downloaded [here](https://rspec.info/).
+
+- Open file.
+- On root folder run the command `rspec`.
+- Whatch the results.
+
 ## Game Instructions
 
 - After executing the game, The player is prompted by a welcome messege and asked to enter a nickname for `Player1`. Press `Enter` to complete
@@ -52,6 +60,12 @@ To play this game on the browser please visit the Live Demo section
 - GitHub: [Rodrigo Ibateca](https://github.com/RokoVarano/)
 - Twitter: [@Rodrigo](https://twitter.com/RodrigoIbacet11)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/rodrigo-ibaceta-a8657611a/)
+
+👤 **Luis Angulo**
+
+- GitHub: [@pipe2442](https://https://github.com/pipe2442)
+- Twitter: [@donCodigo_](https://twitter.com/donCodigo_)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/pipe2442/)
 
 ## 🤝 Contributing
 

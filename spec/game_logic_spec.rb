@@ -35,50 +35,59 @@ describe Board do
     it 'returns false if input == 0' do
       expect(board.check_input(0)).to be false
     end
-    
-    it 'returns false unless input.positive? && input < 10' do
+    it 'returns false if input is negative' do
       expect(board.check_input(-2)).to be false
     end
-    it 'returns false unless input.positive? && input < 10' do
+    it 'returns false if input is more than 10' do
       expect(board.check_input(12)).to be false
     end
-    it 'returns false unless input.positive? && input < 10' do
+    it 'returns true if input is 0 < input < 10' do
       expect(board.check_input(5)).to be true
     end
   end
 
   describe '#check_board' do
-    it 'Check if current box was previously chosen' do
+    it 'Return true if box was not previously chosen' do
       expect(clear_board.check_board('1')).to be true
     end
-    it 'Check if current box was previously chosen' do
+    it 'Return false if box was not previously chosen' do
       expect(win1.check_board('1')).to be false
     end
-    it 'Check if current box was previously chosen' do
+    it 'Return false if box was not previously chosen' do
       expect(win2.check_board('7')).to be false
     end
-    it 'Check if current box was previously chosen' do
+    it 'Return false if box was not previously chosen' do
       expect(draw.check_board('9')).to be false
     end
   end
 
+  describe '#change_box' do
+    it 'Change the box number into a player 1 tag' do
+      expect(win1.change_box('5', player1)).to be win1.board_grid[4]
+    end
+
+    it 'Change the box number into a player 2 tag' do
+      expect(win2.change_box('9', player2)).to be win2.board_grid[8]
+    end
+  end
+
   describe '#check_winner' do
-    it 'Check if or the winner' do
+    it 'Return the player Object if winner is found' do
       expect(win1.check_winner(player1)).to be player1
     end
-    it 'Check if or the winner' do
+    it 'Return the player Object if winner is found' do
       expect(win2.check_winner(player2)).to be player2
     end
-    it 'Check if or the winner' do
+    it 'Return nil if no winner' do
       expect(draw.check_winner(player2)).to be nil
     end
   end
 
   describe '#check_draw' do
-    it 'Check if it is a draw' do
+    it 'Return true if board has no numbers and winner is nil' do
       expect(draw.check_draw(nil)).to be true
     end
-    it 'Check if it is a draw' do
+    it 'Return nil if trying to pass a player object as winner on a draw board' do
       expect(draw.check_draw(player1)).to be nil
     end
   end

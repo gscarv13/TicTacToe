@@ -11,6 +11,8 @@ class Player
 end
 
 class Board
+  attr_reader :board_grid
+
   def initialize
     @board_grid = [
       Square.new('1'), Square.new('2'), Square.new('3'),

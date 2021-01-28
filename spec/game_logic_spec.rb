@@ -7,29 +7,42 @@ describe Board do
   let(:board) { Board.new }
   let(:clear_board) { Board.new }
 
-  player1 = Player.new('X')
-  player2 = Player.new('O')
+  let(:player1) { Player.new('X') }
+  let(:player2) { Player.new('O') }
 
-  win1 = Board.new
-  win1.change_box('1', player1)
-  win1.change_box('4', player1)
-  win1.change_box('7', player1)
+  let(:win1) do
+    player1 = Player.new('X')
+    win1 = Board.new
+    win1.change_box('1', player1)
+    win1.change_box('4', player1)
+    win1.change_box('7', player1)
+    win1
+  end
 
-  win2 = Board.new
-  win2.change_box('1', player2)
-  win2.change_box('4', player2)
-  win2.change_box('7', player2)
+  let(:win2) do
+    player2 = Player.new('O')
+    win2 = Board.new
+    win2.change_box('1', player2)
+    win2.change_box('4', player2)
+    win2.change_box('7', player2)
+    win2
+  end
 
-  draw = Board.new
-  draw.change_box('1', player1)
-  draw.change_box('2', player1)
-  draw.change_box('3', player2)
-  draw.change_box('4', player2)
-  draw.change_box('5', player2)
-  draw.change_box('6', player1)
-  draw.change_box('7', player1)
-  draw.change_box('8', player2)
-  draw.change_box('9', player1)
+  let(:draw) do
+    player1 = Player.new('X')
+    player2 = Player.new('O')
+    draw = Board.new
+    draw.change_box('1', player1)
+    draw.change_box('2', player1)
+    draw.change_box('3', player2)
+    draw.change_box('4', player2)
+    draw.change_box('5', player2)
+    draw.change_box('6', player1)
+    draw.change_box('7', player1)
+    draw.change_box('8', player2)
+    draw.change_box('9', player1)
+    draw
+  end
 
   describe '#check_input' do
     it 'returns false if input == 0' do
